@@ -1,0 +1,17 @@
+FROM ghcr.io/fedlearnnet/python-tool-api/base-python-dep:0.7.15.dev
+
+USER 0
+RUN apk add --no-cache python-3.11-dev build-base
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+
+RUN chown -R nonroot:nonroot /app /opt/venv \
+ && chmod -R u+rwX,g+rwX /app
+
+ENV MPLBACKEND=Agg
+
+USER nonroot:nonroot
+
+CMD ["python", "-m", "main"]

@@ -1,0 +1,63 @@
+config:
+  hyperparams:
+  - default: '10'
+    description: Minimum size of subnetwork for biclustering
+    maxValue: null
+    minValue: 1.0
+    name: l_g_min
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: '15'
+    description: Maximum size of subnetwork for biclustering
+    maxValue: null
+    minValue: 1.0
+    name: l_g_max
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: '15'
+    description: Maximum number of iterations for the search algorithm
+    maxValue: null
+    minValue: 1.0
+    name: max_iter
+    options: []
+    pattern: null
+    type: INTEGER
+  input:
+  - description: Network data file (TSV format) containing gene interactions
+    name: net
+    required: true
+    type: TSV
+  - description: Gene expression data file (CSV format) with genes as rows and samples
+      as columns
+    name: expr
+    required: true
+    type: CSV
+  output:
+  - description: Cluster map visualization showing patient stratification
+    maxValue: null
+    minValue: null
+    name: cluster_map
+    shape: null
+    type: STRING
+  - description: Network visualization showing identified subnetworks
+    maxValue: null
+    minValue: null
+    name: network
+    shape: null
+    type: STRING
+  - description: Results file containing biclustering analysis results
+    maxValue: null
+    minValue: null
+    name: result
+    shape: null
+    type: CSV
+info:
+  name: tool-bicon
+  slug: tool-bicon
+  type: SELF_LEARNED
+  sourceUrl: https://github.com/FedLearnNet/tool-bicon
+  shortDescription: Runs network-constrained biclustering with BiCoN and exports sample
+    clusters and gene modules.
+  longDescription: null
