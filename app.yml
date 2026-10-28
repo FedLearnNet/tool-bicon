@@ -54,8 +54,8 @@ config:
     shape: null
     type: CSV
 info:
-  name: tool-bicon
-  slug: tool-bicon
+  name: bicon
+  slug: bicon
   type: SELF_LEARNED
   sourceUrl: https://github.com/FedLearnNet/tool-bicon
   shortDescription: Runs network-constrained biclustering with BiCoN and exports sample

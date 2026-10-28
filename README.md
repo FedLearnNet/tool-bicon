@@ -1,4 +1,4 @@
-# tool-bicon
+# bicon
 
 Runs network-constrained biclustering with BiCoN and exports sample clusters and gene modules.
 
